@@ -145,6 +145,8 @@ cvsem <- function(data = NULL, Models, discrepancyMetric = "KL-Divergence", k = 
           model_results <- lavaan::sem(model = model, data = train_data)
         } else if (lavaanFunction == "lavaan"){
           model_results <- lavaan::lavaan(model = model, data = train_data)
+        } else if (lavaanFunction == "efa"){
+          model_results <- lavaan::efa(model = model, data = train_data, rotation = "oblimin")
         } else{
           model_results <- lavaan::cfa(model = model, data = train_data)}
 
