@@ -66,7 +66,7 @@ cvsem <- function(data = NULL, Models, discrepancyMetric = "KL-Divergence", k = 
   stopifnot("`k` must be numeric " = is.numeric(k))
   if(is.null(data)) stop("Provide data in `data`")
 
-  match.arg(arg = tolower(lavaanFunction), choices = c("sem", "lavaan", "cfa"))
+  match.arg(arg = tolower(lavaanFunction), choices = c("sem", "lavaan", "cfa", "efa"))
   match.arg(arg = tolower(discrepancyMetric), choices = c("kl-divergence", "kl-d", "kl", "mwl", "gls", "fd"))
 
   if ( !inherits(Models,  what = 'cvgather' ) ) stop("Use `cvgather` to collect the models for the `Models` argument.")
